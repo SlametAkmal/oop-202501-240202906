@@ -9,10 +9,7 @@ Topik: [Tuliskan judul topik, misalnya "Class dan Object"]
 ---
 
 ## Tujuan
-(Tuliskan tujuan praktikum minggu ini.  
-Contoh: *Mahasiswa memahami konsep class dan object serta dapat membuat class Produk dengan enkapsulasi.*)
-
----
+1. Mahasiswa dapat memahami konsep tiga dasar paradigma pemrograman: procedural, oop, dan fungcional. ( dalam bahasa java)
 
 ## Dasar Teori
 (Tuliskan ringkasan teori singkat (3–5 poin) yang mendasari praktikum.  
