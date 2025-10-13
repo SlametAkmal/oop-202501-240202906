@@ -2,9 +2,9 @@
 Topik: [Tuliskan judul topik, misalnya "Class dan Object"]
 
 ## Identitas
-- Nama  : [Nama Mahasiswa]
-- NIM   : [NIM Mahasiswa]
-- Kelas : [Kelas]
+- Nama  : [Slamet Akmal]
+- NIM   : [240202906]
+- Kelas : [3IKRB]
 
 ---
 
@@ -64,7 +64,17 @@ Contoh: *Dengan menggunakan class dan object, program menjadi lebih terstruktur 
 
 ## Quiz
 (1. [Tuliskan kembali pertanyaan 1 dari panduan]  
-   **Jawaban:** …  
+   **Jawaban:** Procedural HelloProcedural.java
+Program ini menggunakan pendekatan prosedural, yaitu semua perintah dijalankan secara berurutan dalam satu fungsi utama main(). Di dalamnya terdapat dua variabel, nama dan nim, yang menyimpan nilai "Slamet Akmal" dan "240202906". Keduanya digabung menggunakan System.out.println("Hello World, I am " + nama + "-" + nim); untuk menampilkan hasil di layar. Semua logika berada di satu tempat tanpa class atau objek tambahan. Pendekatan ini mudah dipahami untuk program kecil namun kurang efisien untuk sistem besar karena tidak terstruktur.
+Output:
+
+Hello Functional World
+NIM: 240202906, Nama: Slamet Akmal
+Daftar Produk:
+- Speaker: 180000
+- Keyboard: 140000
+- Mouse: 95000
+Total harga semua produk: 415000 
 
 2. [Tuliskan kembali pertanyaan 2 dari panduan]  
    **Jawaban:** …  
