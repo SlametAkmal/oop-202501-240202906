@@ -41,7 +41,7 @@ System.out.println(p1.getNama());
 
 ## Hasil Eksekusi
 HelloProcedural
-<img width="1025" height="738" alt="image" src="https://github.com/user-attachments/assets/4e08cc6e-0d55-44e1-a141-e9b17b0b0f9e" />
+[<img width="1025" height="738" alt="image" src="https://github.com/user-attachments/assets/4e08cc6e-0d55-44e1-a141-e9b17b0b0f9e" />](https://github.com/SlametAkmal/oop-202501-240202906/blob/main/praktikum/week1-setup-hello-pos/screenshots/HasilProcedural.png)
 
 ## Analisis
 (
