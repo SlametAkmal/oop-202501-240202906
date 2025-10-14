@@ -30,9 +30,18 @@ Paradigma pemrograman adalah cara pandang dalam menyusun program:
 
 
 ## Kode Program
-Procedural
-![alt text](https://github.com/SlametAkmal/oop-202501-240202906/blob/main/praktikum/week1-setup-hello-pos/src/main/java/com/upb/agripos/HelloProcedural.java?raw=true)
+- Prosedural
+```java
+// HelloProcedural
+public class HelloProcedural {
+    public static void main(String[] args) {
+        String nim = "240202906";
+        String name = "Slamet Akmal";
 
+        System.out.println("Hello World, I am " + name + " - " + nim);
+    }
+}
+```
 ## Hasil Eksekusi
 HelloProcedural
 ![alt text](https://github.com/SlametAkmal/oop-202501-240202906/blob/main/praktikum/week1-setup-hello-pos/screenshots/HasilProcedural.png?raw=true)
