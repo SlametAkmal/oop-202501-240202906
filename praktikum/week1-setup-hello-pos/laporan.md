@@ -41,8 +41,7 @@ System.out.println(p1.getNama());
 
 ## Hasil Eksekusi
 HelloProcedural
-
-(https://github.com/SlametAkmal/oop-202501-240202906/blob/main/praktikum/week1-setup-hello-pos/screenshots/HasilProcedural.png)
+![alt text](https://github.com/SlametAkmal/oop-202501-240202906/blob/main/praktikum/week1-setup-hello-pos/screenshots/HasilProcedural.png?raw=true)
 ## Analisis
 (
 - Jelaskan bagaimana kode berjalan.  
