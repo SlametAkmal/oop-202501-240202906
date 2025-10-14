@@ -42,6 +42,45 @@ public class HelloProcedural {
     }
 }
 ```
+- OOP (Object-Oriented Programming)
+```java
+// HelloOOP
+class Student {
+    String nim;
+    String name;
+    Student(String nim, String name) {
+        this.nim = nim;
+        this.name = name;
+    }
+
+    void introduce() {
+        System.out.println("Hello World, I am " + name + " - " + nim);
+    }
+}
+
+public class HelloOOP {
+    public static void main(String[] args) {
+        Student s = new Student("240202906", "Slamet Akmal");
+        s.introduce();
+    }
+}
+```
+- Fungsional
+```java
+// HelloFunctional
+import java.util.function.BiConsumer;
+
+public class HelloFunctional {
+    public static void main(String[] args) {
+        BiConsumer<String, String> introduce =
+            (nim, name) -> System.out.println("Hello World, I am " + name + " - " + nim);
+
+        introduce.accept("240202906", "Slamet Akmal");
+    }
+}
+```
+
+---
 ## Hasil Eksekusi
 HelloProcedural
 ![alt text](https://github.com/SlametAkmal/oop-202501-240202906/blob/main/praktikum/week1-setup-hello-pos/screenshots/HasilProcedural.png?raw=true)
