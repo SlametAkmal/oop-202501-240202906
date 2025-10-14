@@ -30,25 +30,8 @@ Contoh:
 
 ## Kode Program
 Procedural
-package com.upb.agripos;
+![alt text](https://github.com/SlametAkmal/oop-202501-240202906/blob/main/praktikum/week1-setup-hello-pos/src/main/java/com/upb/agripos/HelloProcedural.java?raw=true)
 
-public class HelloProcedural {
-    public static void main(String[] args) {
-        String nim = "240202906";
-        String nama = "Slamet Akmal";
-        String[] produk = {"Speaker", "Keyboard", "Mouse"};
-        int[] harga = {180000, 140000, 95000};
-        int total = 0;
-        System.out.println("Hello POS World");
-        System.out.println("NIM: " + nim + ", Nama: " + nama);
-        System.out.println("Daftar Produk:");
-        for (int i = 0; i < produk.length; i++) {
-            System.out.println("- " + produk[i] + ": " + harga[i]);
-            total += harga[i];
-        }
-        System.out.println("Total harga semua produk: " + total);
-    }
-}
 ## Hasil Eksekusi
 HelloProcedural
 ![alt text](https://github.com/SlametAkmal/oop-202501-240202906/blob/main/praktikum/week1-setup-hello-pos/screenshots/HasilProcedural.png?raw=true)
