@@ -45,6 +45,9 @@ HelloProcedural
 
 HelloOOP
 ![alt text](https://github.com/SlametAkmal/oop-202501-240202906/blob/main/praktikum/week1-setup-hello-pos/screenshots/HasilOOP.png?raw=true)
+
+HelloFunctional
+![alt text](https://github.com/SlametAkmal/oop-202501-240202906/blob/main/praktikum/week1-setup-hello-pos/screenshots/HasilFunctional.png?raw=true)
 ## Analisis
 (
 - Jelaskan bagaimana kode berjalan.  
