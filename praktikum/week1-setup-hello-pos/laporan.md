@@ -40,10 +40,8 @@ System.out.println(p1.getNama());
 ---
 
 ## Hasil Eksekusi
-(Sertakan screenshot hasil eksekusi program.  
-![Screenshot hasil](screenshots/hasil.png)
-)
----
+HelloProcedural
+<img width="1025" height="738" alt="image" src="https://github.com/user-attachments/assets/4e08cc6e-0d55-44e1-a141-e9b17b0b0f9e" />
 
 ## Analisis
 (
