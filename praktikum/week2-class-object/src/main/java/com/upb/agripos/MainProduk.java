@@ -12,6 +12,16 @@ public class MainProduk {
         System.out.println("Kode: " + p2.getKode() + ", Nama: " + p2.getNama() + ", Harga: " + p2.getHarga() + ", Stok: " + p2.getStok());
         System.out.println("Kode: " + p3.getKode() + ", Nama: " + p3.getNama() + ", Harga: " + p3.getHarga() + ", Stok: " + p3.getStok());
 
+        // Tambah dan kurangi stok
+        p1.tambahStok(50);
+        p2.kurangiStok(20);
+        p3.tambahStok(10);
+
+        System.out.println("\nSetelah update stok");
+        System.out.println("Kode: " + p1.getKode() + ", Nama: " + p1.getNama() + ", Harga: " + p1.getHarga() + ", Stok:" + p1.getStok());
+        System.out.println("Kode: " + p2.getKode() + ", Nama: " + p2.getNama() + ", Harga: " + p2.getHarga() + ", Stok:" + p2.getStok());
+        System.out.println("Kode: " + p3.getKode() + ", Nama: " + p3.getNama() + ", Harga: " + p3.getHarga() + ", Stok:" + p3.getStok());
+
         CreditBy.print("240202906", "Slamet Akmal");
     }
 }

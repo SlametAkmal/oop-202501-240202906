@@ -44,4 +44,16 @@ public class Produk {
     public void setStok(int stok) {
         this.stok = stok;
     }
+
+    public void tambahStok(int jumlah) {
+        this.stok += jumlah;
+    }
+
+    public void kurangiStok(int jumlah) {
+        if (this.stok >= jumlah) {
+            this.stok -= jumlah;
+        } else {
+            System.out.println("Stok tidak mencukupi");
+        }
+    }
 }
