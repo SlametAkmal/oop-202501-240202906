@@ -9,25 +9,40 @@ Topik: [Tuliskan judul topik, misalnya "Class dan Object"]
 ---
 
 ## Tujuan
-(Tuliskan tujuan praktikum minggu ini.  
-Contoh: *Mahasiswa memahami konsep class dan object serta dapat membuat class Produk dengan enkapsulasi.*)
+- Mahasiswa mampu menjelaskan konsep class, object, atribut, dan method dalam OOP.
+- Mahasiswa mampu menerapkan access modifier dan enkapsulasi dalam pembuatan class.
 
 ---
 
 ## Dasar Teori
-(Tuliskan ringkasan teori singkat (3–5 poin) yang mendasari praktikum.  
-Contoh:  
-1. Class adalah blueprint dari objek.  
-2. Object adalah instansiasi dari class.  
-3. Enkapsulasi digunakan untuk menyembunyikan data.)
+1. Class adalah blueprint atau cetak biru dari sebuah objek.
+2. Object adalah instansiasi dari class yang berisi atribut (data) dan method (perilaku).
+3. Enkapsulasi digunakan untuk menyembunyikan data menggunakan access modifier (public, private, protected) serta menyediakan akses melalui getter dan setter.
 
 ---
 
 ## Langkah Praktikum
-(Tuliskan Langkah-langkah dalam prakrikum, contoh:
-1. Langkah-langkah yang dilakukan (setup, coding, run).  
-2. File/kode yang dibuat.  
-3. Commit message yang digunakan.)
+1. Membuat Class Produk
+
+- Buat file Produk.java pada package model.
+- Tambahkan atribut: kode, nama, harga, dan stok.
+- Gunakan enkapsulasi dengan menjadikan atribut bersifat private dan membuat getter serta setter untuk masing-masing atribut.
+
+2. Membuat Class CreditBy
+
+- Buat file CreditBy.java pada package util.
+- Isi class dengan method statis untuk menampilkan identitas mahasiswa di akhir output: credit by: 240202906 Slamet Akmal.
+
+3. Membuat Objek Produk dan Menampilkan Credit
+
+- Buat file MainProduk.java.
+- Instansiasi minimal tiga objek produk, misalnya "Speaker", "Keyboard", dan satu produk Mouse.
+- Tampilkan informasi produk melalui method getter.
+- Panggil CreditBy.print("240202906", "Slamet Akmal") di akhir main.
+
+4. Commit dan Push
+
+- Commit dengan pesan: week2-class-object.
 
 ---
 
@@ -80,6 +95,18 @@ public class Produk {
     public void setStok(int stok) {
         this.stok = stok;
     }
+
+    public void tambahStok(int jumlah) {
+        this.stok += jumlah;
+    }
+
+    public void kurangiStok(int jumlah) {
+        if (this.stok >= jumlah) {
+            this.stok -= jumlah;
+        } else {
+            System.out.println("Stok tidak mencukupi");
+        }
+    }
 }
 ```
 
@@ -110,6 +137,16 @@ public class MainProduk {
         System.out.println("Kode: " + p2.getKode() + ", Nama: " + p2.getNama() + ", Harga: " + p2.getHarga() + ", Stok: " + p2.getStok());
         System.out.println("Kode: " + p3.getKode() + ", Nama: " + p3.getNama() + ", Harga: " + p3.getHarga() + ", Stok: " + p3.getStok());
 
+        // Tambah dan kurangi stok
+        p1.tambahStok(50);
+        p2.kurangiStok(20);
+        p3.tambahStok(10);
+
+        System.out.println("\nSetelah update stok");
+        System.out.println("Kode: " + p1.getKode() + ", Nama: " + p1.getNama() + ", Harga: " + p1.getHarga() + ", Stok:" + p1.getStok());
+        System.out.println("Kode: " + p2.getKode() + ", Nama: " + p2.getNama() + ", Harga: " + p2.getHarga() + ", Stok:" + p2.getStok());
+        System.out.println("Kode: " + p3.getKode() + ", Nama: " + p3.getNama() + ", Harga: " + p3.getHarga() + ", Stok:" + p3.getStok());
+
         CreditBy.print("240202906", "Slamet Akmal");
     }
 }
@@ -123,24 +160,28 @@ MainProduk.java
 
 ## Analisis
 (
-- Jelaskan bagaimana kode berjalan.  
-- Apa perbedaan pendekatan minggu ini dibanding minggu sebelumnya.  
-- Kendala yang dihadapi dan cara mengatasinya.  
+1. Jelaskan bagaimana kode berjalan.
+- Program menerapkan paradigma OOP, di mana data dan perilaku dibungkus dalam class Produk.
+- Setiap objek Produk menyimpan informasi unik seperti kode, nama, harga, dan stok.
+- Method tambahStok() dan kurangiStok() mengubah nilai stok dengan aman tanpa mengakses atribut secara langsung.
+Class CreditBy menampilkan identitas mahasiswa melalui method statis print().
+
+2. Apa perbedaan pendekatan minggu ini dibanding minggu sebelumnya.  
+- Minggu sebelumnya masih menggunakan pendekatan prosedural, di mana semua data dan logika berada di satu fungsi main().
+
+3. Kendala yang dihadapi dan cara mengatasinya. 
+ - Tidak ditemukan error selama kompilasi dan eksekusi.
 )
 ---
 
 ## Kesimpulan
-(Tuliskan kesimpulan dari praktikum minggu ini.  
-Contoh: *Dengan menggunakan class dan object, program menjadi lebih terstruktur dan mudah dikembangkan.*)
+Dengan menggunakan konsep class dan object, program menjadi lebih terstruktur, mudah dikembangkan, serta mendukung prinsip reusability dalam pemrograman berorientasi objek.
 
 ---
 
 ## Quiz
-(1. [Tuliskan kembali pertanyaan 1 dari panduan]  
-   **Jawaban:** …  
+1. Mengapa atribut sebaiknya dideklarasikan sebagai     private dalam class? Jawaban: Agar data terlindungi dari akses langsung oleh class lain dan hanya dapat dimodifikasi melalui method yang telah disediakan.  
 
-2. [Tuliskan kembali pertanyaan 2 dari panduan]  
-   **Jawaban:** …  
+2. Apa fungsi getter dan setter dalam enkapsulasi? Jawaban: Getter digunakan untuk mengambil nilai atribut, sedangkan setter digunakan untuk mengubah nilai atribut dengan kontrol yang aman.
 
-3. [Tuliskan kembali pertanyaan 3 dari panduan]  
-   **Jawaban:** …  )
+3. Bagaimana cara class Produk mendukung pengembangan aplikasi POS yang lebih kompleks? Jawaban: Dengan adanya class Produk, sistem POS dapat dengan mudah menambah fitur seperti transaksi penjualan, pengelolaan stok otomatis, serta integrasi dengan database dan antarmuka pengguna.
