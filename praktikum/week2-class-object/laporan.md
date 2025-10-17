@@ -32,8 +32,8 @@ Contoh:
 ---
 
 ## Kode Program
-Produk.java
----
+```java
+//Produk.java
 package com.upb.agripos.model;
 
 public class Produk {
@@ -81,10 +81,10 @@ public class Produk {
         this.stok = stok;
     }
 }
----
+```
 
-CreditBy.java
----
+```java
+//CreditBy.java
 package com.upb.agripos.util;
 
 public class CreditBy {
@@ -92,10 +92,10 @@ public class CreditBy {
         System.out.println("\ncredit by: " + nim + " - " + nama);
     }
 }
----
+```
 
-MainProduk.java
----
+```java
+//MainProduk.java
 package com.upb.agripos;
 import com.upb.agripos.model.Produk;
 import com.upb.agripos.util.CreditBy;
@@ -113,7 +113,7 @@ public class MainProduk {
         CreditBy.print("240202906", "Slamet Akmal");
     }
 }
----
+```
 
 ## Hasil Eksekusi
 MainProduk.java
