@@ -2,9 +2,9 @@
 Topik: [Tuliskan judul topik, misalnya "Class dan Object"]
 
 ## Identitas
-- Nama  : [Nama Mahasiswa]
-- NIM   : [NIM Mahasiswa]
-- Kelas : [Kelas]
+- Nama  : [Slamet Akmal]
+- NIM   : [240202906]
+- Kelas : [3IKRB]
 
 ---
 
@@ -32,20 +32,93 @@ Contoh:
 ---
 
 ## Kode Program
-(Tuliskan kode utama yang dibuat, contoh:  
+Produk.java
+---
+package com.upb.agripos.model;
 
-```java
-// Contoh
-Produk p1 = new Produk("BNH-001", "Benih Padi", 25000, 100);
-System.out.println(p1.getNama());
-```
-)
+public class Produk {
+    private String kode;
+    private String nama;
+    private double harga;
+    private int stok;
+
+    public Produk(String kode, String nama, double harga, int stok) {
+        this.kode = kode;
+        this.nama = nama;
+        this.harga = harga;
+        this.stok = stok;
+    }
+
+    public String getNama() {
+        return nama;
+    }
+
+    public void setNama(String nama) {
+        this.nama = nama;
+    }
+
+    public String getKode() {
+        return kode;
+    }
+
+    public void setKode(String kode) {
+        this.kode = kode;
+    }
+
+    public double getHarga() {
+        return harga;
+    }
+
+    public void setHarga(double harga) {
+        this.harga = harga;
+    }
+
+    public int getStok() {
+        return stok;
+    }
+
+    public void setStok(int stok) {
+        this.stok = stok;
+    }
+}
+---
+
+CreditBy.java
+---
+package com.upb.agripos.util;
+
+public class CreditBy {
+    public static void print(String nim, String nama) {
+        System.out.println("\ncredit by: " + nim + " - " + nama);
+    }
+}
+---
+
+MainProduk.java
+---
+package com.upb.agripos;
+import com.upb.agripos.model.Produk;
+import com.upb.agripos.util.CreditBy;
+
+public class MainProduk {
+    public static void main(String[] args) {
+        Produk p1 = new Produk("SPK-001", "Speaker", 180000, 50);
+        Produk p2 = new Produk("KYB-101", "Keyboard", 140000, 20);
+        Produk p3 = new Produk("MUS-501", "Mouse", 95000, 15);
+
+        System.out.println("Kode: " + p1.getKode() + ", Nama: " + p1.getNama() + ", Harga: " + p1.getHarga() + ", Stok: " + p1.getStok());
+        System.out.println("Kode: " + p2.getKode() + ", Nama: " + p2.getNama() + ", Harga: " + p2.getHarga() + ", Stok: " + p2.getStok());
+        System.out.println("Kode: " + p3.getKode() + ", Nama: " + p3.getNama() + ", Harga: " + p3.getHarga() + ", Stok: " + p3.getStok());
+
+        CreditBy.print("240202906", "Slamet Akmal");
+    }
+}
 ---
 
 ## Hasil Eksekusi
-(Sertakan screenshot hasil eksekusi program.  
-![Screenshot hasil](screenshots/hasil.png)
-)
+MainProduk.java
+
+![alt text](https://github.com/SlametAkmal/oop-202501-240202906/blob/main/praktikum/week2-class-object/screenshots/Hasil.png?raw=true)
 ---
 
 ## Analisis
