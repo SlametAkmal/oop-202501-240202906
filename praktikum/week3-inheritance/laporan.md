@@ -1,4 +1,4 @@
-# Laporan Praktikum Minggu 1 (sesuaikan minggu ke berapa?)
+# Laporan Praktikum Minggu 3 (sesuaikan minggu ke berapa?)
 Topik: [Tuliskan judul topik, misalnya "Class dan Object"]
 
 ## Identitas
@@ -48,9 +48,8 @@ Commit dengan pesan: week3-inheritance.)
 
 ---
 
-## Kode Program
+## Speaker.java
 ```java
-   //Speaker.java
    package main.java.com.upb.agripos.model;
 
 public class Speaker extends Produk {
@@ -69,9 +68,8 @@ public class Speaker extends Produk {
     }
 }
 ```
-
+## Keyboard.java
 ```java
-///Keyboard.java
 package main.java.com.upb.agripos.model;
 
 public class Keyboard extends Produk {
@@ -91,9 +89,8 @@ public class Keyboard extends Produk {
     }
 }
 ```
-
+## AlatKomputer.java
 ```java
-///AlatKomputer.java
 package main.java.com.upb.agripos.model;
 
 public class AlatKomputer extends Produk{
@@ -112,9 +109,8 @@ public class AlatKomputer extends Produk{
     }
 }
 ```
-
+## MainInheitance.java
 ```java
-///MainInheitance.java
 package main.java.com.upb.agripos;
 
 import main.java.com.upb.agripos.model.AlatKomputer;
@@ -140,12 +136,10 @@ public class MainInheritance {
 ---
 
 ## Hasil Eksekusi
-(![alt text](E:\Tugas\oop-202501-240202906\praktikum\week3-inheritance\screenshots?raw=true)
-)
+![alt text](https://github.com/SlametAkmal/oop-202501-240202906/tree/main/praktikum/week3-inheritance/screenshots/Hasil.png?raw=true)
 ---
 
 ## Analisis
-(
 Penjelasan Cara Kerja Kode
 Kode ini bekerja dengan menerapkan inheritance, di mana tiga subclass (Speaker, Keyboard, dan AlatKomputer) mewarisi semua properti dasar dari superclass (Produk). Setiap subclass memanggil konstruktor superclass menggunakan super() untuk menginisialisasi atribut umum, kemudian menambahkan dan menampilkan atribut uniknya masing-masing seperti varietas, jenis, atau material.
 
