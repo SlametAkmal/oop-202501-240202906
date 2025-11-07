@@ -137,7 +137,7 @@ public class MainInheritance {
 ---
 
 ## Hasil Eksekusi
-![alt text](E:\Tugas\oop-202501-240202906\praktikum\week3-inheritance\screenshots?raw=true)
+![alt text](https://github.com/SlametAkmal/oop-202501-240202906/blob/main/praktikum/week3-inheritance/screenshots/Hasil.png?raw=true)
 ---
 
 ## Analisis
