@@ -23,5 +23,6 @@ public class MainProduk {
         System.out.println("Kode: " + p3.getKode() + ", Nama: " + p3.getNama() + ", Harga: " + p3.getHarga() + ", Stok:" + p3.getStok());
 
         CreditBy.print("240202906", "Slamet Akmal");
+        }
     }
 }
