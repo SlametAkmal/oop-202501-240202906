@@ -29,29 +29,22 @@ Paradigma pemrograman adalah cara pandang dalam menyusun program:
 6. Membuat commit ke repository GitHub dengan pesan commit "week1-setup-hello-pos"
 
 
-## Kode Program
-- Prosedural
+## Prosedural
 ```java
 // HelloProcedural
+package com.upb.agripos;
+
 public class HelloProcedural {
     public static void main(String[] args) {
-        String nim = "240202906";
         String nama = "Slamet Akmal";
-        String[] produk = {"Speaker", "Keyboard", "Mouse"};
-        int[] harga = {180000, 140000, 95000};
-        int total = 0;
-        System.out.println("Hello POS World");
-        System.out.println("NIM: " + nim + ", Nama: " + nama);
-        System.out.println("Daftar Produk:");
-        for (int i = 0; i < produk.length; i++) {
-            System.out.println("- " + produk[i] + ": " + harga[i]);
-            total += harga[i];
-        }
-        System.out.println("Total harga semua produk: " + total);
+        Integer NIM = 240202906;
+
+        System.out.println("Hello, I'm " + nama + " - " + NIM);
     }
 }
+
 ```
-- OOP (Object-Oriented Programming)
+## OOP (Object-Oriented Programming)
 ```java
 // HelloOOP
 class Student {
@@ -63,42 +56,49 @@ class Student {
     }
 
     void introduce() {
-        System.out.println("Hello World, I am " + name + " - " + nim);
+        System.out.println("Hello Word, I am " + name + " - ");
     }
 }
 
 public class HelloOOP {
     public static void main(String[] args) {
-        Student s = new Student("240202906", "Slamet Akmal");
-        s.introduce();
+       Student s = new Student("240202906", "Slamet Akmal");
     }
+
 }
 ```
-- Fungsional
+## HelloFungsional
 ```java
-// HelloFunctional
-import java.util.function.BiConsumer;
+class Student {
+    String nim;
+    String name;
+    Student(String nim, String name) {
+        this.nim = nim;
+        this.name = name;
+    }
 
-public class HelloFunctional {
-    public static void main(String[] args) {
-        BiConsumer<String, String> introduce =
-            (nim, name) -> System.out.println("Hello World, I am " + name + " - " + nim);
-
-        introduce.accept("240202906", "Slamet Akmal");
+    void introduce() {
+        System.out.println("Hello Word, I am " + name + " - ");
     }
 }
-```
 
+public class HelloOOP {
+    public static void main(String[] args) {
+       Student s = new Student("240202906", "Slamet Akmal");
+    }
+
+}
+```
 ---
 ## Hasil Eksekusi
 HelloProcedural
-![alt text](https://github.com/SlametAkmal/oop-202501-240202906/blob/main/praktikum/week1-setup-hello-pos/screenshots/HasilProcedural.png?raw=true)
+![alt text]https://github.com/SlametAkmal/oop-202501-240202906/blob/main/praktikum/week1-setup-hello-pos/screenshots/HelloProcedural.png?raw=true)
 
 HelloOOP
-![alt text](https://github.com/SlametAkmal/oop-202501-240202906/blob/main/praktikum/week1-setup-hello-pos/screenshots/HasilOOP.png?raw=true)
+![alt text](https://github.com/SlametAkmal/oop-202501-240202906/blob/main/praktikum/week1-setup-hello-pos/screenshots/HelloOOP.png?raw=true)
 
 HelloFunctional
-![alt text](https://github.com/SlametAkmal/oop-202501-240202906/blob/main/praktikum/week1-setup-hello-pos/screenshots/HasilFunctional.png?raw=true)
+![alt text](https://github.com/SlametAkmal/oop-202501-240202906/blob/main/praktikum/week1-setup-hello-pos/screenshots/HelloFungsional.png?raw=true)
 ## Analisis
   Cara kerja kode:
 - Pada paradigma prosedural, kode hanya berupa urutan instruksi tanpa class.
