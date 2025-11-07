@@ -92,7 +92,7 @@ public class HelloOOP {
 ---
 ## Hasil Eksekusi
 HelloProcedural
-![alt text]https://github.com/SlametAkmal/oop-202501-240202906/blob/main/praktikum/week1-setup-hello-pos/screenshots/HelloProcedural.png?raw=true)
+![alt text](https://github.com/SlametAkmal/oop-202501-240202906/blob/main/praktikum/week1-setup-hello-pos/screenshots/HelloProcedural.png?raw=true)
 
 HelloOOP
 ![alt text](https://github.com/SlametAkmal/oop-202501-240202906/blob/main/praktikum/week1-setup-hello-pos/screenshots/HelloOOP.png?raw=true)
