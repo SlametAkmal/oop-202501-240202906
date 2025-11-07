@@ -25,4 +25,3 @@ public class MainProduk {
         CreditBy.print("240202906", "Slamet Akmal");
         }
     }
-}

@@ -1,10 +1,10 @@
 package main.java.com.upb.agripos.model;
 
-public class AlatKomputer extends Produk{
+public class AlatPertanian extends Produk{
 
     private String material;
 
-    public AlatKomputer(String kode, String nama, double harga, int stok, String material) {
+    public AlatPertanian(String kode, String nama, double harga, int stok, String material) {
         super(kode, nama,harga,stok );
         this.material = material;
     }
