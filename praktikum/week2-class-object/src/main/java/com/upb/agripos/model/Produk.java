@@ -13,37 +13,17 @@ public class Produk {
         this.stok = stok;
     }
 
-    public String getNama() {
-        return nama;
-    }
+    public String getKode() { return kode; }
+    public void setKode(String kode) {this.kode = kode; }
 
-    public void setNama(String nama) {
-        this.nama = nama;
-    }
+    public String getNama() {return nama; }
+    public void setnama(String nama) {this.nama = nama; }
 
-    public String getKode() {
-        return kode;
-    }
+    public double getHarga() {return harga; }
+    public void setHarga(double harga) {this.harga = harga; }
 
-    public void setKode(String kode) {
-        this.kode = kode;
-    }
-
-    public double getHarga() {
-        return harga;
-    }
-
-    public void setHarga(double harga) {
-        this.harga = harga;
-    }
-
-    public int getStok() {
-        return stok;
-    }
-
-    public void setStok(int stok) {
-        this.stok = stok;
-    }
+    public int getStok() {return stok; }
+    public void setStok(int stok) {this.stok = stok; }
 
     public void tambahStok(int jumlah) {
         this.stok += jumlah;

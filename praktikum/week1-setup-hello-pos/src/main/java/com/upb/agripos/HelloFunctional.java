@@ -1,20 +1,16 @@
-class Student {
-    String nim;
-    String name;
-    Student(String nim, String name) {
-        this.nim = nim;
-        this.name = name;
-    }
+package com.upb.agripos;
 
-    void introduce() {
-        System.out.println("Hello Word, I am " + name + " - ");
-    }
-}
+import java.util.function.BiConsumer;
 
-public class HelloOOP {
+public class HelloFunctional {
+
     public static void main(String[] args) {
-        com.upb.agripos.Student s = new com.upb.agripos.Student("240202906", "Slamet Akmal");
-    }
 
+        BiConsumer<String, String> introduce =
+                (nim, name) -> System.out.println("Hello World, I am " + name + " - " + nim);
+
+        introduce.accept("240202906", "Slamet Akmal");
+    }
 }
+
 
