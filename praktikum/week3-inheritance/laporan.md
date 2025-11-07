@@ -48,56 +48,55 @@ Commit dengan pesan: week3-inheritance.)
 
 ---
 
-## Speaker.java
-```java
-   package main.java.com.upb.agripos.model;
-
-public class Speaker extends Produk {
-    private  String varietas;
-
-    public Speaker(String kode, String nama, double harga, int stok, String varietas) {
-        super(kode, nama, harga, stok);
-        this.varietas = varietas;
-    }
-
-    public String getVarietas() { return  varietas; }
-    public  void  setVarietas(String varietas) { this.varietas = varietas; }
-
-    public void deskripsi() {
-        System.out.println("Nama Barang : " + getNama() + "\n variates speaker : " + getVarietas() + "\n harga Speaker/bungkus :" + getHarga() +"\n");
-    }
-}
-```
-## Keyboard.java
+## Benih.java
 ```java
 package main.java.com.upb.agripos.model;
 
-public class Keyboard extends Produk {
+public class Benih extends Produk {
 
-    private String jenis;
+    private String varietas;
 
-    public Keyboard(String kode, String nama, double harga, int stok, String jenis) {
+    public Benih(String kode, String nama, double harga, int stok, String varietas) {
+        super(kode, nama, harga, stok);
+        this.varietas= varietas;
+    }
+
+    public String getVarietas() { return  varietas; }
+    public void setVarietas(String jenis) { this.varietas = varietas; }
+
+    public void deskripsi() {
+        System.out.println("Nama Barang : " + getNama() + "\n Varietas benih : " + getVarietas() + "\n harga Benih/bungkus :" + getHarga() +"\n");
+    }
+}
+```
+## Pupuk.java
+```java
+package main.java.com.upb.agripos.model;
+
+public class Pupuk extends Produk {
+
+    private  String jenis;
+
+    public Pupuk(String kode, String nama, double harga, int stok, String varietas) {
         super(kode, nama, harga, stok);
         this.jenis = jenis;
     }
 
     public String getJenis() { return  jenis; }
-    public void setJenis(String jenis) { this.jenis = jenis; }
+    public  void  setJenis(String varietas) { this.jenis = varietas; }
 
     public void deskripsi() {
-        System.out.println("Nama Barang : " + getNama() + "\n Jenis Keyboard : " + getJenis() + "\n harga keyboard/140000 :" + getHarga() +"\n");
+        System.out.println("Nama Barang : " + getNama() + "\n   Jenis Pupuk : " + getJenis() + "\n    harga pupuk/20kg :" + getHarga() +"\n");
     }
 }
 ```
 ## AlatKomputer.java
 ```java
-package main.java.com.upb.agripos.model;
-
-public class AlatKomputer extends Produk{
+public class AlatPertanian extends Produk{
 
     private String material;
 
-    public AlatKomputer(String kode, String nama, double harga, int stok, String material) {
+    public AlatPertanian(String kode, String nama, double harga, int stok, String material) {
         super(kode, nama,harga,stok );
         this.material = material;
     }
@@ -108,6 +107,7 @@ public class AlatKomputer extends Produk{
         System.out.println("Nama Barang : "+ getNama() + "\n Mterial yang dipakai : " + getMaterial() + "\n harga barang :" + getHarga() +"\n");
     }
 }
+
 ```
 ## MainInheitance.java
 
@@ -115,19 +115,18 @@ public class AlatKomputer extends Produk{
 package main.java.com.upb.agripos;
 
 import main.java.com.upb.agripos.model.AlatPertanian;
-import main.java.com.upb.agripos.model.Pupuk;
-import main.java.com.upb.agripos.model.Speaker;
 import main.java.com.upb.agripos.model.Benih;
+import main.java.com.upb.agripos.model.Pupuk;
 import main.java.com.upb.agripos.util.CreditBy;
 
 public class MainInheritance {
     public static void main(String[] args) {
-        Pupuk s = new Pupuk("SPK-001", "Speaker Komputer IR64", 180000, 100, "64");
-        Benih k = new Benih("KYB-101", "Keyboard Komputer", 140000, 40, "Komputer");
-        AlatPertanian a = new AlatPertanian("ALT-501", "Ram", 90000, 15, "Ram");
+        Pupuk b = new Pupuk("BNH-001", "Banih Padi IR64", 25000,100, "IR64");
+        Benih p = new Benih("PPK-101", "Pupuk Urea", 350000, 40, "Urea");
+        AlatPertanian a = new AlatPertanian("ALT-501", "Cangkul Baja", 90000, 15, "Baja");
 
-        s.deskripsi();
-        k.deskripsi();
+        b.deskripsi();
+        p.deskripsi();
         a.deskripsi();
 
 
@@ -138,7 +137,7 @@ public class MainInheritance {
 ---
 
 ## Hasil Eksekusi
-![alt text](https://github.com/SlametAkmal/oop-202501-240202906/blob/main/praktikum/week3-inheritance/screenshots/Hasil.png?raw=true)
+![alt text](https://github.com/SlametAkmal/oop-202501-240202906/tree/main/praktikum/week3-inheritance/screenshots?raw=true)
 ---
 
 ## Analisis
@@ -151,7 +150,7 @@ Pendekatan minggu ini menggunakan pewarisan untuk menciptakan hierarki yang ters
 ---
 
 ## Kesimpulan
-(implementasi Inheritance (Pewarisan) dalam OOP dengan membuat hierarki class untuk produk pertanian. Superclass Produk mendefinisikan atribut dasar yang umum (kode, nama, harga, stok), sementara Subclass (seperti Speaker, Keyboard, dan AlatKomputer) mewarisi atribut tersebut dan menambahkan properti yang spesifik (varietas, jenis, material). Penggunaan keyword super() dalam konstruktor subclass memastikan inisialisasi yang efisien terhadap data superclass, yang pada akhirnya menghasilkan kode yang lebih reusable, terstruktur, dan mudah dipelihara dibandingkan dengan pendekatan class tunggal. Pendekatan ini adalah pondasi penting untuk sistem Agri-POS agar dapat mengelola berbagai jenis produk secara modular.
+(implementasi Inheritance (Pewarisan) dalam OOP dengan membuat hierarki class untuk produk pertanian. Superclass Produk mendefinisikan atribut dasar yang umum (kode, nama, harga, stok), sementara Subclass (seperti Benih, Pupuk Urea, dan AlatPertanian) mewarisi atribut tersebut dan menambahkan properti yang spesifik (varietas, jenis, material). Penggunaan keyword super() dalam konstruktor subclass memastikan inisialisasi yang efisien terhadap data superclass, yang pada akhirnya menghasilkan kode yang lebih reusable, terstruktur, dan mudah dipelihara dibandingkan dengan pendekatan class tunggal. Pendekatan ini adalah pondasi penting untuk sistem Agri-POS agar dapat mengelola berbagai jenis produk secara modular.
 
 *)
 
