@@ -36,7 +36,7 @@ Topik: [Tuliskan judul topik, misalnya "Class dan Object"]
 3. Membuat Objek Produk dan Menampilkan Credit
 
 - Buat file MainProduk.java.
-- Instansiasi minimal tiga objek produk, misalnya "Speaker", "Keyboard", dan satu produk Mouse.
+- Instansiasi minimal tiga objek produk, misalnya "Benih Padi", "Pupuk Urea", dan satu produk Mouse.
 - Tampilkan informasi produk melalui method getter.
 - Panggil CreditBy.print("240202906", "Slamet Akmal") di akhir main.
 
@@ -46,9 +46,8 @@ Topik: [Tuliskan judul topik, misalnya "Class dan Object"]
 
 ---
 
-## Kode Program
+## Produk.java
 ```java
-//Produk.java
 package com.upb.agripos.model;
 
 public class Produk {
@@ -64,37 +63,17 @@ public class Produk {
         this.stok = stok;
     }
 
-    public String getNama() {
-        return nama;
-    }
+    public String getKode() { return kode; }
+    public void setKode(String kode) {this.kode = kode; }
 
-    public void setNama(String nama) {
-        this.nama = nama;
-    }
+    public String getNama() {return nama; }
+    public void setnama(String nama) {this.nama = nama; }
 
-    public String getKode() {
-        return kode;
-    }
+    public double getHarga() {return harga; }
+    public void setHarga(double harga) {this.harga = harga; }
 
-    public void setKode(String kode) {
-        this.kode = kode;
-    }
-
-    public double getHarga() {
-        return harga;
-    }
-
-    public void setHarga(double harga) {
-        this.harga = harga;
-    }
-
-    public int getStok() {
-        return stok;
-    }
-
-    public void setStok(int stok) {
-        this.stok = stok;
-    }
+    public int getStok() {return stok; }
+    public void setStok(int stok) {this.stok = stok; }
 
     public void tambahStok(int jumlah) {
         this.stok += jumlah;
@@ -110,8 +89,8 @@ public class Produk {
 }
 ```
 
+## CreditBy.java
 ```java
-//CreditBy.java
 package com.upb.agripos.util;
 
 public class CreditBy {
@@ -120,18 +99,17 @@ public class CreditBy {
     }
 }
 ```
-
+## MainProduk.java
 ```java
-//MainProduk.java
 package com.upb.agripos;
 import com.upb.agripos.model.Produk;
 import com.upb.agripos.util.CreditBy;
 
 public class MainProduk {
     public static void main(String[] args) {
-        Produk p1 = new Produk("SPK-001", "Speaker", 180000, 50);
-        Produk p2 = new Produk("KYB-101", "Keyboard", 140000, 20);
-        Produk p3 = new Produk("MUS-501", "Mouse", 95000, 15);
+        Produk p1 = new Produk("BNH-001", "Benih Padi IR64", 25000, 100);
+        Produk p2 = new Produk("PPK-101", "Pupuk Urea 50kg", 350000, 40);
+        Produk p3 = new Produk("ALT-501", "Cangkul Baja", 90000, 15);
 
         System.out.println("Kode: " + p1.getKode() + ", Nama: " + p1.getNama() + ", Harga: " + p1.getHarga() + ", Stok: " + p1.getStok());
         System.out.println("Kode: " + p2.getKode() + ", Nama: " + p2.getNama() + ", Harga: " + p2.getHarga() + ", Stok: " + p2.getStok());
@@ -148,8 +126,8 @@ public class MainProduk {
         System.out.println("Kode: " + p3.getKode() + ", Nama: " + p3.getNama() + ", Harga: " + p3.getHarga() + ", Stok:" + p3.getStok());
 
         CreditBy.print("240202906", "Slamet Akmal");
+        }
     }
-}
 ```
 
 ## Hasil Eksekusi
