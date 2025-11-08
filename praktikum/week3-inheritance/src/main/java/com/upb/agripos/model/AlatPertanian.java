@@ -1,6 +1,6 @@
 package main.java.com.upb.agripos.model;
 
-public class AlatPertanian extends Produk{
+public class AlatPertanian extends Produk {
 
     private String material;
 

@@ -49,8 +49,11 @@ Commit dengan pesan: week3-inheritance.)
 ---
 
 ## Benih.java
+
 ```java
 package main.java.com.upb.agripos.model;
+
+import main.java.main.java.com.upb.agripos.model.Produk;
 
 public class Benih extends Produk {
 
@@ -58,35 +61,48 @@ public class Benih extends Produk {
 
     public Benih(String kode, String nama, double harga, int stok, String varietas) {
         super(kode, nama, harga, stok);
-        this.varietas= varietas;
+        this.varietas = varietas;
     }
 
-    public String getVarietas() { return  varietas; }
-    public void setVarietas(String jenis) { this.varietas = varietas; }
+    public String getVarietas() {
+        return varietas;
+    }
+
+    public void setVarietas(String jenis) {
+        this.varietas = varietas;
+    }
 
     public void deskripsi() {
-        System.out.println("Nama Barang : " + getNama() + "\n Varietas benih : " + getVarietas() + "\n harga Benih/bungkus :" + getHarga() +"\n");
+        System.out.println("Nama Barang : " + getNama() + "\n Varietas benih : " + getVarietas() + "\n harga Benih/bungkus :" + getHarga() + "\n");
     }
 }
 ```
 ## Pupuk.java
+
 ```java
 package main.java.com.upb.agripos.model;
 
+import main.java.main.java.com.upb.agripos.model.Produk;
+
 public class Pupuk extends Produk {
 
-    private  String jenis;
+    private String jenis;
 
     public Pupuk(String kode, String nama, double harga, int stok, String varietas) {
         super(kode, nama, harga, stok);
         this.jenis = jenis;
     }
 
-    public String getJenis() { return  jenis; }
-    public  void  setJenis(String varietas) { this.jenis = varietas; }
+    public String getJenis() {
+        return jenis;
+    }
+
+    public void setJenis(String varietas) {
+        this.jenis = varietas;
+    }
 
     public void deskripsi() {
-        System.out.println("Nama Barang : " + getNama() + "\n   Jenis Pupuk : " + getJenis() + "\n    harga pupuk/20kg :" + getHarga() +"\n");
+        System.out.println("Nama Barang : " + getNama() + "\n   Jenis Pupuk : " + getJenis() + "\n    harga pupuk/20kg :" + getHarga() + "\n");
     }
 }
 ```
@@ -114,14 +130,12 @@ public class AlatPertanian extends Produk{
 ```java
 package main.java.com.upb.agripos;
 
-import main.java.com.upb.agripos.model.AlatPertanian;
-import main.java.com.upb.agripos.model.Benih;
 import main.java.com.upb.agripos.model.Pupuk;
-import main.java.com.upb.agripos.util.CreditBy;
+import main.java.com.upb.agripos.util.MainPolymorphism;
 
 public class MainInheritance {
     public static void main(String[] args) {
-        Pupuk b = new Pupuk("BNH-001", "Banih Padi IR64", 25000,100, "IR64");
+        Pupuk b = new Pupuk("BNH-001", "Banih Padi IR64", 25000, 100, "IR64");
         Benih p = new Benih("PPK-101", "Pupuk Urea", 350000, 40, "Urea");
         AlatPertanian a = new AlatPertanian("ALT-501", "Cangkul Baja", 90000, 15, "Baja");
 

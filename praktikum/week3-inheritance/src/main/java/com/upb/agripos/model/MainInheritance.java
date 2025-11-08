@@ -1,9 +1,6 @@
-package main.java.com.upb.agripos;
+package main.java.com.upb.agripos.model;
 
-import main.java.com.upb.agripos.model.AlatPertanian;
-import main.java.com.upb.agripos.model.Benih;
-import main.java.com.upb.agripos.model.Pupuk;
-import main.java.com.upb.agripos.util.CreditBy;
+import com.upb.agripos.util.CreditBy;
 
 public class MainInheritance {
     public static void main(String[] args) {
