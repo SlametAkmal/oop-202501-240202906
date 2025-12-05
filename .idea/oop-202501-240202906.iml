@@ -7,6 +7,7 @@
       <sourceFolder url="file://$MODULE_DIR$/praktikum/week2-class-object/src/main/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/praktikum/week3-inheritance/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/praktikum/week4-polymorphism/src/main/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/praktikum/week5-abstraction-interface/src" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
