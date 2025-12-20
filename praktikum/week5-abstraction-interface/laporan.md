@@ -183,7 +183,7 @@ public class TransferBank extends Pembayaran implements Reciptable, Validatable 
 ---
 
 ## Hasil Eksekusi
-![Screenshot hasil](screenshots/hasil.png)
+![alt text](https://github.com/SlametAkmal/oop-202501-240202906/blob/main/praktikum/week5-abstraction-interface/screenshots/Hasil.png?raw=true)
 ---
 
 ## Analisis
