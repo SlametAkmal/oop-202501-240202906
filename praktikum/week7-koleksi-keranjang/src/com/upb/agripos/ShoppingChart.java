@@ -22,7 +22,7 @@ public class ShoppingChart {
 
     public void printCart() {
         System.out.println("Isi Keranjang:");
-        for (Product p : items) {
+           for (Product p : items) {
             System.out.println("- " + p.getCode() + " " + p.getName() + " = " + p.getPrice());
         }
         System.out.println("Total: " + getTotal());
