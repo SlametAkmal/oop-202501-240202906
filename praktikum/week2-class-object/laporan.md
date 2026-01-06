@@ -104,13 +104,13 @@ public class CreditBy {
 ```java
 package com.upb.agripos;
 
-import main.java.com.upb.agripos.model.Produk;
+import main.java.com.upb.agripos.Produk;
 
 public class MainProduk {
     public static void main(String[] args) {
-        main.java.com.upb.agripos.model.Produk p1 = new main.java.com.upb.agripos.model.Produk("BNH-001", "Benih Padi IR64", 25000, 100);
-        main.java.com.upb.agripos.model.Produk p2 = new main.java.com.upb.agripos.model.Produk("PPK-101", "Pupuk Urea 50kg", 350000, 40);
-        main.java.com.upb.agripos.model.Produk p3 = new Produk("ALT-501", "Cangkul Baja", 90000, 15);
+        main.java.com.upb.agripos.Produk p1 = new main.java.com.upb.agripos.Produk("BNH-001", "Benih Padi IR64", 25000, 100);
+        main.java.com.upb.agripos.Produk p2 = new main.java.com.upb.agripos.Produk("PPK-101", "Pupuk Urea 50kg", 350000, 40);
+        main.java.com.upb.agripos.Produk p3 = new Produk("ALT-501", "Cangkul Baja", 90000, 15);
 
         System.out.println("Kode: " + p1.getKode() + ", Nama: " + p1.getNama() + ", Harga: " + p1.getHarga() + ", Stok: " + p1.getStok());
         System.out.println("Kode: " + p2.getKode() + ", Nama: " + p2.getNama() + ", Harga: " + p2.getHarga() + ", Stok: " + p2.getStok());

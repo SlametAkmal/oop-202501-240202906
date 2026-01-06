@@ -1,4 +1,4 @@
-package main.java.com.upb.agripos.model;
+package main.java.com.upb.agripos;
 
 import com.upb.agripos.util.CreditBy;
 

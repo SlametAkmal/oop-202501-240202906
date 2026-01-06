@@ -1,4 +1,4 @@
-package main.java.com.upb.agripos.model.kontrak;
+package main.java.com.upb.agripos.kontrak;
 
 public interface Validatable {
     boolean validasi();

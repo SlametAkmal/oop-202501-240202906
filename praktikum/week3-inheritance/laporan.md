@@ -53,6 +53,7 @@ Commit dengan pesan: week3-inheritance.)
 ```java
 package main.java.com.upb.agripos.model;
 
+import main.java.com.upb.agripos.Produk;
 import main.java.main.java.com.upb.agripos.model.Produk;
 
 public class Benih extends Produk {
@@ -82,6 +83,7 @@ public class Benih extends Produk {
 ```java
 package main.java.com.upb.agripos.model;
 
+import main.java.com.upb.agripos.Produk;
 import main.java.main.java.com.upb.agripos.model.Produk;
 
 public class Pupuk extends Produk {
@@ -130,7 +132,6 @@ public class AlatPertanian extends Produk{
 ```java
 package main.java.com.upb.agripos;
 
-import main.java.com.upb.agripos.model.Pupuk;
 import main.java.com.upb.agripos.util.MainPolymorphism;
 
 public class MainInheritance {

@@ -1,11 +1,10 @@
 package main.java.com.upb.agripos;
 
-import main.java.com.upb.agripos.model.*;
-import main.java.com.upb.agripos.model.kontrak.Receiptable;
-import main.java.com.upb.agripos.model.pembayaran.Cash;
-import main.java.com.upb.agripos.model.pembayaran.Ewalet;
-import main.java.com.upb.agripos.model.pembayaran.Pembayaran;
-import main.java.com.upb.agripos.model.pembayaran.TransferBank;
+import main.java.com.upb.agripos.kontrak.Receiptable;
+import main.java.com.upb.agripos.pembayaran.Cash;
+import main.java.com.upb.agripos.pembayaran.Ewalet;
+import main.java.com.upb.agripos.pembayaran.Pembayaran;
+import main.java.com.upb.agripos.pembayaran.TransferBank;
 import main.java.com.upb.agripos.util.CreditBy;
 
 public class MainAbstraction {

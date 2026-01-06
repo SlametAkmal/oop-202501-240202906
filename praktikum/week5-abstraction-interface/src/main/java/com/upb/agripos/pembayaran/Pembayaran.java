@@ -1,4 +1,4 @@
-package main.java.com.upb.agripos.model.pembayaran;
+package main.java.com.upb.agripos.pembayaran;
 
 
 public abstract class Pembayaran {

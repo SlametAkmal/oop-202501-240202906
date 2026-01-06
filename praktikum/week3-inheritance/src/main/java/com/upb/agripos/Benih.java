@@ -1,4 +1,4 @@
-package main.java.com.upb.agripos.model;
+package main.java.com.upb.agripos;
 
 public class Benih extends Produk {
 
