@@ -1,6 +1,8 @@
 package com.upb.agripos.model;
 
-public class ObatHama extends Produk{
+import com.upb.agripos.Produk;
+
+public class ObatHama extends Produk {
 
     String fungsi;
 
