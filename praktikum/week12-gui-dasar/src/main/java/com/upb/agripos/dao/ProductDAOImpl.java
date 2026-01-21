@@ -3,7 +3,7 @@ package com.upb.agripos.dao;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
-import com.upb.agripos.model.Product;
+import com.upb.agripos.Product;
 
 public class ProductDAOImpl implements ProductDAO {
 

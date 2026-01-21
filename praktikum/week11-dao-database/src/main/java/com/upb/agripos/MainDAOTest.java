@@ -6,7 +6,6 @@ import java.util.List;
 
 import com.upb.agripos.dao.ProductDAO;
 import com.upb.agripos.dao.impl.ProductDAOImpl;
-import com.upb.agripos.model.Product;
 
 public class MainDAOTest {
     public static void main(String[] args) throws Exception {

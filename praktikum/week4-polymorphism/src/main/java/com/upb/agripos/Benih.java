@@ -1,4 +1,4 @@
-package main.java.com.upb.agripos.model;
+package com.upb.agripos;
 
 import main.java.com.upb.agripos.Product;
 

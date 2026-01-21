@@ -1,4 +1,4 @@
-package com.upb.agripos.model;
+package com.upb.agripos;
 
 import com.upb.agripos.Produk;
 

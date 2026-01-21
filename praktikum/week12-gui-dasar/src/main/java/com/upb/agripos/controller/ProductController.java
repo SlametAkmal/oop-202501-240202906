@@ -1,6 +1,6 @@
 package com.upb.agripos.controller;
 
-import com.upb.agripos.model.Product;
+import com.upb.agripos.Product;
 import com.upb.agripos.service.ProductService;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;

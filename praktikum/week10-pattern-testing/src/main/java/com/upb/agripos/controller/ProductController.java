@@ -1,6 +1,6 @@
 package com.upb.agripos.controller;
 
-import com.upb.agripos.model.Product;
+import com.upb.agripos.Product;
 import com.upb.agripos.view.ConsolView;
 
 public class ProductController {

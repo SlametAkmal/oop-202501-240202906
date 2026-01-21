@@ -7,14 +7,17 @@
       <sourceFolder url="file://$MODULE_DIR$/praktikum/week2-class-object/src/main/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/praktikum/week3-inheritance/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/praktikum/week5-abstraction-interface/src" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/praktikum/week7-koleksi-keranjang/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/praktikum/week7-koleksi-keranjang/src" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/praktikum/week9-exception-handling/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/praktikum/week10-pattern-testing/src/main/java" type="java-resource" />
-      <sourceFolder url="file://$MODULE_DIR$/praktikum/week11-dao-database/src/main/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/praktikum/week11-dao-database/src/main/java" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/praktikum/week12-gui-dasar/src/main/java" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/praktikum/week13-gui-lanjutan/src/main/java" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/praktikum/week4-polymorphism/src/main/java" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/praktikum/week14-integrasi-individu/src/main/java" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/praktikum/week15-proyek-kelompok/src/main/java" type="java-resource" />
       <excludeFolder url="file://$MODULE_DIR$/praktikum/week12-gui-dasar" />
+      <excludeFolder url="file://$MODULE_DIR$/praktikum/week14-integrasi-individu" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

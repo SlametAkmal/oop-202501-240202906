@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.upb.agripos.dao.ProductDAO;
-import com.upb.agripos.model.Product;
+import com.upb.agripos.Product;
 
 public class ProductDAOImpl implements ProductDAO {
 

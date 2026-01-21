@@ -1,6 +1,5 @@
 package main.java.com.upb.agripos;
 import com.upb.agripos.model.ObatHama;
-import main.java.com.upb.agripos.model.*;
 import main.java.com.upb.agripos.util.CreditBy;
 
 public class MainPolymorphism {

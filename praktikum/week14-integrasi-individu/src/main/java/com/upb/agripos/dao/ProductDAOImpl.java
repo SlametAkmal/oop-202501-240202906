@@ -1,45 +1,127 @@
-package com.upb.agripos.util;
+
+package com.upb.agripos.dao;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+
+import com.upb.agripos.model.Product;
 
 /**
- * Singleton Pattern untuk koneksi database
- * Bab 10 - Design Pattern
+ * Implementasi ProductDAO dengan JDBC
+ * Mengikuti pattern dari Bab 11 (Data Access Object)
  */
-public class DatabaseConnection {
-    private static final String URL = "jdbc:postgresql://localhost:5432/agripos";
-    private static final String USER = "postgres";
-    private static final String PASSWORD = "postgres";
+public class ProductDAOImpl implements ProductDAO {
+    private final Connection connection;
 
-    private static Connection connection;
-
-    private DatabaseConnection() {
-        // Private constructor untuk mencegah instantiasi
+    public ProductDAOImpl(Connection connection) {
+        this.connection = connection;
     }
 
-    public static Connection getConnection() throws SQLException {
-        if (connection == null || connection.isClosed()) {
-            try {
-                Class.forName("org.postgresql.Driver");
-                connection = DriverManager.getConnection(URL, USER, PASSWORD);
-                System.out.println("Database connected successfully!");
-            } catch (ClassNotFoundException e) {
-                throw new SQLException("PostgreSQL Driver not found", e);
-            }
+    @Override
+    public void insert(Product p) throws Exception {
+        if (p.getCode() == null || p.getCode().isEmpty()) {
+            throw new IllegalArgumentException("Kode produk tidak boleh kosong");
         }
-        return connection;
+        if (p.getPrice() < 0) {
+            throw new IllegalArgumentException("Harga tidak boleh negatif");
+        }
+        if (p.getStock() < 0) {
+            throw new IllegalArgumentException("Stok tidak boleh negatif");
+        }
+
+        String sql = "INSERT INTO products (code, name, price, stock) VALUES (?, ?, ?, ?)";
+        try (PreparedStatement stmt = connection.prepareStatement(sql)) {
+            stmt.setString(1, p.getCode());
+            stmt.setString(2, p.getName());
+            stmt.setDouble(3, p.getPrice());
+            stmt.setInt(4, p.getStock());
+            stmt.executeUpdate();
+        } catch (SQLException e) {
+            throw new Exception("Gagal menambah produk: " + e.getMessage());
+        }
     }
 
-    public static void closeConnection() {
-        if (connection != null) {
-            try {
-                connection.close();
-                System.out.println("Database connection closed.");
-            } catch (SQLException e) {
-                System.err.println("Error closing connection: " + e.getMessage());
-            }
+    @Override
+    public void update(Product p) throws Exception {
+        String sql = "UPDATE products SET name = ?, price = ?, stock = ? WHERE code = ?";
+        try (PreparedStatement stmt = connection.prepareStatement(sql)) {
+            stmt.setString(1, p.getName());
+            stmt.setDouble(2, p.getPrice());
+            stmt.setInt(3, p.getStock());
+            stmt.setString(4, p.getCode());
+            stmt.executeUpdate();
+        } catch (SQLException e) {
+            throw new Exception("Gagal mengubah produk: " + e.getMessage());
         }
+    }
+
+    @Override
+    public void delete(String code) throws Exception {
+        String sql = "DELETE FROM products WHERE code = ?";
+        try (PreparedStatement stmt = connection.prepareStatement(sql)) {
+            stmt.setString(1, code);
+            int rowsDeleted = stmt.executeUpdate();
+            if (rowsDeleted == 0) {
+                throw new Exception("Produk dengan kode " + code + " tidak ditemukan");
+            }
+        } catch (SQLException e) {
+            throw new Exception("Gagal menghapus produk: " + e.getMessage());
+        }
+    }
+
+    @Override
+    public void insert(com.upb.agripos.Product product) throws Exception {
+
+    }
+
+    @Override
+    public Product findByCode(String code) throws Exception {
+        String sql = "SELECT * FROM products WHERE code = ?";
+        try (PreparedStatement stmt = connection.prepareStatement(sql)) {
+            stmt.setString(1, code);
+            try (ResultSet rs = stmt.executeQuery()) {
+                if (rs.next()) {
+                    return new Product(
+                            rs.getString("code"),
+                            rs.getString("name"),
+                            rs.getDouble("price"),
+                            rs.getInt("stock")
+                    );
+                }
+            }
+        } catch (SQLException e) {
+            throw new Exception("Gagal mencari produk: " + e.getMessage());
+        }
+        return null;
+    }
+
+    @Override
+    public List<com.upb.agripos.Product> findAll() throws Exception {
+        List<Product> products = new ArrayList<>();
+        String sql = "SELECT * FROM products";
+        try (Statement stmt = connection.createStatement();
+             ResultSet rs = stmt.executeQuery(sql)) {
+            while (rs.next()) {
+                products.add(new Product(
+                        rs.getString("code"),
+                        rs.getString("name"),
+                        rs.getDouble("price"),
+                        rs.getInt("stock")
+                ));
+            }
+        } catch (SQLException e) {
+            throw new Exception("Gagal mengambil daftar produk: " + e.getMessage());
+        }
+        return products;
+    }
+
+    @Override
+    public void update(com.upb.agripos.Product product) throws Exception {
+
     }
 }

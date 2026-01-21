@@ -6,7 +6,6 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 // Import the Product class and ProductService (assuming they exist in the project)
-import com.upb.agripos.model.Product;
 import com.upb.agripos.service.ProductService;
 
 public class AppJavaFX extends Application {

@@ -5,7 +5,6 @@ import javafx.scene.control.*;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import com.upb.agripos.controller.ProductController;
-import com.upb.agripos.model.Product;
 import com.upb.agripos.service.ProductService;
 
 public class AppJavaFX extends Application {
