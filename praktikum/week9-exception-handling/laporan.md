@@ -100,76 +100,82 @@ public class Product {
 }
 ```
 ### 3. Implementasi ShoppingCart dengan Exception Handling
+
 ```java
 package com.upb.agripos;
+
+import com.upb.agripos.model.Product;
 
 import java.util.HashMap;
 import java.util.Map;
 
 public class ShoppingCart {
-    private final Map<Product, Integer> items = new HashMap<>();
+   private final Map<Product, Integer> items = new HashMap<>();
 
-    public void addProduct(Product p, int qty) throws InvalidQuantityException {
-        if (qty <= 0) {
-            throw new InvalidQuantityException("Quantity harus lebih dari 0.");
-        }
-        items.put(p, items.getOrDefault(p, 0) + qty);
-    }
+   public void addProduct(Product p, int qty) throws InvalidQuantityException {
+      if (qty <= 0) {
+         throw new InvalidQuantityException("Quantity harus lebih dari 0.");
+      }
+      items.put(p, items.getOrDefault(p, 0) + qty);
+   }
 
-    public void removeProduct(Product p) throws ProductNotFoundException {
-        if (!items.containsKey(p)) {
-            throw new ProductNotFoundException("Produk tidak ada dalam keranjang.");
-        }
-        items.remove(p);
-    }
+   public void removeProduct(Product p) throws ProductNotFoundException {
+      if (!items.containsKey(p)) {
+         throw new ProductNotFoundException("Produk tidak ada dalam keranjang.");
+      }
+      items.remove(p);
+   }
 
-    public void checkout() throws InsufficientStockException {
-        for (Map.Entry<Product, Integer> entry : items.entrySet()) {
-            Product product = entry.getKey();
-            int qty = entry.getValue();
-            if (product.getStock() < qty) {
-                throw new InsufficientStockException(
+   public void checkout() throws InsufficientStockException {
+      for (Map.Entry<Product, Integer> entry : items.entrySet()) {
+         Product product = entry.getKey();
+         int qty = entry.getValue();
+         if (product.getStock() < qty) {
+            throw new InsufficientStockException(
                     "Stok tidak cukup untuk: " + product.getName()
-                );
-            }
-        }
-        // contoh pengurangan stok bila semua cukup
-        for (Map.Entry<Product, Integer> entry : items.entrySet()) {
-            entry.getKey().reduceStock(entry.getValue());
-        }
-    }
+            );
+         }
+      }
+      // contoh pengurangan stok bila semua cukup
+      for (Map.Entry<Product, Integer> entry : items.entrySet()) {
+         entry.getKey().reduceStock(entry.getValue());
+      }
+   }
 }
 ```
 ### 4. Main Program untuk Menguji Exception Handling
+
 ```java
 package com.upb.agripos;
 
+import com.upb.agripos.model.Product;
+
 public class MainExceptionDemo {
-    public static void main(String[] args) {
-        System.out.println("Hello, I am [Nama]-[NIM] (Week9)");
+   public static void main(String[] args) {
+      System.out.println("Hello, I am [Nama]-[NIM] (Week9)");
 
-        ShoppingCart cart = new ShoppingCart();
-        Product p1 = new Product("P01", "Pupuk Organik", 25000, 3);
+      ShoppingCart cart = new ShoppingCart();
+      Product p1 = new Product("P01", "Pupuk Organik", 25000, 3);
 
-        try {
-            cart.addProduct(p1, -1);
-        } catch (InvalidQuantityException e) {
-            System.out.println("Kesalahan: " + e.getMessage());
-        }
+      try {
+         cart.addProduct(p1, -1);
+      } catch (InvalidQuantityException e) {
+         System.out.println("Kesalahan: " + e.getMessage());
+      }
 
-        try {
-            cart.removeProduct(p1);
-        } catch (ProductNotFoundException e) {
-            System.out.println("Kesalahan: " + e.getMessage());
-        }
+      try {
+         cart.removeProduct(p1);
+      } catch (ProductNotFoundException e) {
+         System.out.println("Kesalahan: " + e.getMessage());
+      }
 
-        try {
-            cart.addProduct(p1, 5);
-            cart.checkout();
-        } catch (Exception e) {
-            System.out.println("Kesalahan: " + e.getMessage());
-        }
-    }
+      try {
+         cart.addProduct(p1, 5);
+         cart.checkout();
+      } catch (Exception e) {
+         System.out.println("Kesalahan: " + e.getMessage());
+      }
+   }
 }
 ```
 ---

@@ -74,10 +74,6 @@ public class ProductDAOImpl implements ProductDAO {
         }
     }
 
-    @Override
-    public void insert(com.upb.agripos.Product product) throws Exception {
-
-    }
 
     @Override
     public Product findByCode(String code) throws Exception {
@@ -101,7 +97,7 @@ public class ProductDAOImpl implements ProductDAO {
     }
 
     @Override
-    public List<com.upb.agripos.Product> findAll() throws Exception {
+    public List<Product> findAll() throws Exception {
         List<Product> products = new ArrayList<>();
         String sql = "SELECT * FROM products";
         try (Statement stmt = connection.createStatement();
@@ -120,8 +116,5 @@ public class ProductDAOImpl implements ProductDAO {
         return products;
     }
 
-    @Override
-    public void update(com.upb.agripos.Product product) throws Exception {
 
-    }
 }

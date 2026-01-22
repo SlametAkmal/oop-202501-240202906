@@ -1,4 +1,4 @@
-package com.upb.agripos;
+package com.upb.agripos.model;
 
 public class Product {
     private final String code;

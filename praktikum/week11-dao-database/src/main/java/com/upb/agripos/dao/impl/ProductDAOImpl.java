@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.upb.agripos.dao.ProductDAO;
-import com.upb.agripos.Product;
+import com.upb.agripos.model.Product;
 
 public class ProductDAOImpl implements ProductDAO {
     private Connection connection;

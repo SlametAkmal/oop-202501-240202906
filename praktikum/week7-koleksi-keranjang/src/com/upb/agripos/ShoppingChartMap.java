@@ -1,5 +1,7 @@
 package com.upb.agripos;
 
+import com.upb.agripos.model.Product;
+
 import java.util.HashMap;
 import java.util.Map;
 

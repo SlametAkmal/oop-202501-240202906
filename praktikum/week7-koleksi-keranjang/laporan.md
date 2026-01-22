@@ -71,29 +71,36 @@ public class Product {
 ```java
 package com.upb.agripos;
 
+import com.upb.agripos.model.Product;
+
 import java.util.ArrayList;
 
 public class ShoppingCart {
-    private final ArrayList<Product> items = new ArrayList<>();
+   private final ArrayList<Product> items = new ArrayList<>();
 
-    public void addProduct(Product p) { items.add(p); }
-    public void removeProduct(Product p) { items.remove(p); }
+   public void addProduct(Product p) {
+      items.add(p);
+   }
 
-    public double getTotal() {
-        double sum = 0;
-        for (Product p : items) {
-            sum += p.getPrice();
-        }
-        return sum;
-    }
+   public void removeProduct(Product p) {
+      items.remove(p);
+   }
 
-    public void printCart() {
-        System.out.println("Isi Keranjang:");
-        for (Product p : items) {
-            System.out.println("- " + p.getCode() + " " + p.getName() + " = " + p.getPrice());
-        }
-        System.out.println("Total: " + getTotal());
-    }
+   public double getTotal() {
+      double sum = 0;
+      for (Product p : items) {
+         sum += p.getPrice();
+      }
+      return sum;
+   }
+
+   public void printCart() {
+      System.out.println("Isi Keranjang:");
+      for (Product p : items) {
+         System.out.println("- " + p.getCode() + " " + p.getName() + " = " + p.getPrice());
+      }
+      System.out.println("Total: " + getTotal());
+   }
 }
 ```
 
@@ -102,21 +109,23 @@ public class ShoppingCart {
 ```java
 package com.upb.agripos;
 
+import com.upb.agripos.model.Product;
+
 public class MainCart {
-    public static void main(String[] args) {
-        System.out.println("Hello, I am [Nama]-[NIM] (Week7)");
+   public static void main(String[] args) {
+      System.out.println("Hello, I am [Nama]-[NIM] (Week7)");
 
-        Product p1 = new Product("P01", "Beras", 50000);
-        Product p2 = new Product("P02", "Pupuk", 30000);
+      Product p1 = new Product("P01", "Beras", 50000);
+      Product p2 = new Product("P02", "Pupuk", 30000);
 
-        ShoppingCart cart = new ShoppingCart();
-        cart.addProduct(p1);
-        cart.addProduct(p2);
-        cart.printCart();
+      ShoppingCart cart = new ShoppingCart();
+      cart.addProduct(p1);
+      cart.addProduct(p2);
+      cart.printCart();
 
-        cart.removeProduct(p1);
-        cart.printCart();
-    }
+      cart.removeProduct(p1);
+      cart.printCart();
+   }
 }
 ```
 
@@ -125,36 +134,40 @@ public class MainCart {
 ```java
 package com.upb.agripos;
 
+import com.upb.agripos.model.Product;
+
 import java.util.HashMap;
 import java.util.Map;
 
 public class ShoppingCartMap {
-    private final Map<Product, Integer> items = new HashMap<>();
+   private final Map<Product, Integer> items = new HashMap<>();
 
-    public void addProduct(Product p) { items.put(p, items.getOrDefault(p, 0) + 1); }
+   public void addProduct(Product p) {
+      items.put(p, items.getOrDefault(p, 0) + 1);
+   }
 
-    public void removeProduct(Product p) {
-        if (!items.containsKey(p)) return;
-        int qty = items.get(p);
-        if (qty > 1) items.put(p, qty - 1);
-        else items.remove(p);
-    }
+   public void removeProduct(Product p) {
+      if (!items.containsKey(p)) return;
+      int qty = items.get(p);
+      if (qty > 1) items.put(p, qty - 1);
+      else items.remove(p);
+   }
 
-    public double getTotal() {
-        double total = 0;
-        for (Map.Entry<Product, Integer> entry : items.entrySet()) {
-            total += entry.getKey().getPrice() * entry.getValue();
-        }
-        return total;
-    }
+   public double getTotal() {
+      double total = 0;
+      for (Map.Entry<Product, Integer> entry : items.entrySet()) {
+         total += entry.getKey().getPrice() * entry.getValue();
+      }
+      return total;
+   }
 
-    public void printCart() {
-        System.out.println("Isi Keranjang (Map):");
-        for (Map.Entry<Product, Integer> e : items.entrySet()) {
-            System.out.println("- " + e.getKey().getCode() + " " + e.getKey().getName() + " x" + e.getValue());
-        }
-        System.out.println("Total: " + getTotal());
-    }
+   public void printCart() {
+      System.out.println("Isi Keranjang (Map):");
+      for (Map.Entry<Product, Integer> e : items.entrySet()) {
+         System.out.println("- " + e.getKey().getCode() + " " + e.getKey().getName() + " x" + e.getValue());
+      }
+      System.out.println("Total: " + getTotal());
+   }
 }
 ```
 ---
@@ -166,22 +179,24 @@ public class ShoppingCartMap {
 ```java
 package com.upb.agripos;
 
+import com.upb.agripos.model.Product;
+
 public class MainChart {
-    public static void main(String[] args) {
-        System.out.println("Hello, I am Slamet Akmal-240202906 (Week7)");
+   public static void main(String[] args) {
+      System.out.println("Hello, I am Slamet Akmal-240202906 (Week7)");
 
-        Product p1 = new Product("P01", "Beras", 50000);
-        Product p2 = new Product("P02", "Pupuk", 30000);
+      Product p1 = new Product("P01", "Beras", 50000);
+      Product p2 = new Product("P02", "Pupuk", 30000);
 
-        ShoppingChart cart = new ShoppingChart();
-        cart.addProduct(p1);
-        cart.addProduct(p2);
-        cart.printCart();
+      ShoppingChart cart = new ShoppingChart();
+      cart.addProduct(p1);
+      cart.addProduct(p2);
+      cart.printCart();
 
-        cart.removeProduct(p1);
-        cart.printCart();
-        CreditBy.print("240202906", "Slamet Akmal");
-    }
+      cart.removeProduct(p1);
+      cart.printCart();
+      CreditBy.print("240202906", "Slamet Akmal");
+   }
 }
 
 ```

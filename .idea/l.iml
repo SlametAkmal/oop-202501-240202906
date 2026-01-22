@@ -14,10 +14,8 @@
       <sourceFolder url="file://$MODULE_DIR$/praktikum/week12-gui-dasar/src/main/java" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/praktikum/week13-gui-lanjutan/src/main/java" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/praktikum/week4-polymorphism/src/main/java" type="java-resource" />
-      <sourceFolder url="file://$MODULE_DIR$/praktikum/week14-integrasi-individu/src/main/java" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/praktikum/week14-integrasi-individu/src/main/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/praktikum/week15-proyek-kelompok/src/main/java" type="java-resource" />
-      <excludeFolder url="file://$MODULE_DIR$/praktikum/week12-gui-dasar" />
-      <excludeFolder url="file://$MODULE_DIR$/praktikum/week14-integrasi-individu" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

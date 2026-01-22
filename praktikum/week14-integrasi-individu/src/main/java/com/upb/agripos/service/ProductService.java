@@ -19,28 +19,49 @@ public class ProductService {
     }
 
     public List<Product> getAllProducts() throws DatabaseException {
-        return productDAO.findAll();
+        try {
+            return productDAO.findAll();
+        } catch (Exception e) {
+            throw new DatabaseException("Gagal mengambil data produk", e);
+        }
     }
 
     public Product getProductByCode(String code) throws DatabaseException {
-        return productDAO.findByCode(code);
-    }
-
-    public void addProduct(Product product) throws InvalidProductException, DatabaseException {
-        validateProduct(product);
-        productDAO.insert(product);
-    }
-
-    public void updateProduct(Product product) throws InvalidProductException, DatabaseException {
-        validateProduct(product);
-        productDAO.update(product);
-    }
-
-    public void deleteProduct(String code) throws InvalidProductException, DatabaseException {
-        if (code == null || code.trim().isEmpty()) {
-            throw new InvalidProductException("Kode produk tidak boleh kosong");
+        try {
+            return productDAO.findByCode(code);
+        } catch (Exception e) {
+            throw new DatabaseException("Gagal mengambil produk dengan kode: " + code, e);
         }
-        productDAO.delete(code);
+    }
+
+
+    public void addProduct(Product product)
+            throws InvalidProductException, DatabaseException {
+        try {
+            productDAO.insert(product);
+        } catch (InvalidProductException e) {
+            throw e; // validasi, teruskan
+        } catch (Exception e) {
+            throw new DatabaseException("Gagal menambah produk", e);
+        }
+    }
+
+
+    public void updateProduct(Product product) throws DatabaseException {
+        try {
+            productDAO.update(product);
+        } catch (Exception e) {
+            throw new DatabaseException("Gagal update produk", e);
+        }
+    }
+
+
+    public void deleteProduct(String code) throws DatabaseException {
+        try {
+            productDAO.delete(code);
+        } catch (Exception e) {
+            throw new DatabaseException("Gagal hapus produk", e);
+        }
     }
 
     private void validateProduct(Product product) throws InvalidProductException {

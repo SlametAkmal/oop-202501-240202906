@@ -1,5 +1,7 @@
 package com.upb.agripos;
 
+import com.upb.agripos.model.Product;
+
 public class MainChart {
     public static void main(String[] args) {
         System.out.println("Hello, I am Slamet Akmal-240202906 (Week7)");

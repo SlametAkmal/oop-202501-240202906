@@ -1,6 +1,6 @@
 package com.upb.agripos.service;
 
-import com.upb.agripos.Product;
+import com.upb.agripos.model.Product;
 import java.util.ArrayList;
 import java.util.List;
 

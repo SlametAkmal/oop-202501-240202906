@@ -1,4 +1,5 @@
 package com.upb.agripos;// Import necessary JavaFX and other classes
+import com.upb.agripos.model.Product;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.*;

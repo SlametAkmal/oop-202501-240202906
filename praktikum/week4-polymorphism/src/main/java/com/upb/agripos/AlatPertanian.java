@@ -1,6 +1,8 @@
 package com.upb.agripos;
 
-public class AlatPertanian extends Product{
+import com.upb.agripos.model.Product;
+
+public class AlatPertanian extends Product {
 
     private String material;
 
