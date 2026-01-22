@@ -1,73 +1,70 @@
-# Laporan Praktikum Minggu 1 (sesuaikan minggu ke berapa?)
-Topik: [Tuliskan judul topik, misalnya "Class dan Object"]
+# Laporan Praktikum Minggu 13
+Topik: GUI Lanjutan JavaFX (TableView dan Lambda Expression)
 
 ## Identitas
-- Nama  : [Nama Mahasiswa]
-- NIM   : [NIM Mahasiswa]
-- Kelas : [Kelas]
+- Nama  : [Slamet Almal]
+- NIM   : [240202906]
+- Kelas : [3IKRB]
 
 ---
 
 ## Tujuan
-(Tuliskan tujuan praktikum minggu ini.  
-Contoh: *Mahasiswa memahami konsep class dan object serta dapat membuat class Produk dengan enkapsulasi.*)
-
----
-
-## Dasar Teori
-(Tuliskan ringkasan teori singkat (3–5 poin) yang mendasari praktikum.  
-Contoh:  
-1. Class adalah blueprint dari objek.  
-2. Object adalah instansiasi dari class.  
-3. Enkapsulasi digunakan untuk menyembunyikan data.)
+1. Menampilkan data menggunakan TableView JavaFX.
+2. Mengintegrasikan koleksi objek dengan GUI.
+3. Menggunakan lambda expression untuk event handling.
+4. Menghubungkan GUI dengan DAO secara penuh.
+5. Membangun antarmuka GUI Agri-POS yang lebih interaktif.
 
 ---
 
 ## Langkah Praktikum
-(Tuliskan Langkah-langkah dalam prakrikum, contoh:
-1. Langkah-langkah yang dilakukan (setup, coding, run).  
-2. File/kode yang dibuat.  
-3. Commit message yang digunakan.)
+1. **Setup Project**: Membuat file `pom.xml` untuk dependensi JavaFX dan PostgreSQL.
+2. **Implementasi Backend**: Membuat `ProductDAO`, `ProductDAOImpl`, dan `ProductService` untuk menangani akses database.
+3. **Implementasi View**: Membuat `ProductTableView` yang berisi tabel produk dan form input.
+4. **Implementasi Controller**: Membuat `ProductController` yang menghubungkan View dan Service, serta menangani event tombol menggunakan Lambda Expression.
+5. **Integrasi**: Menghubungkan semua komponen di `AppJavaFX`.
+6. **Commit dan Push**: Menyimpan perubahan ke repository dengan pesan `week13-gui-lanjutan: implement gui with tableview and lambda expression`.
 
 ---
 
 ## Kode Program
-(Tuliskan kode utama yang dibuat, contoh:  
+Berikut adalah implementasi Lambda Expression pada Controller untuk menghapus produk:
 
 ```java
-// Contoh
-Produk p1 = new Produk("BNH-001", "Benih Padi", 25000, 100);
-System.out.println(p1.getNama());
+// Event Handler: Hapus Produk (Lambda)
+view.getBtnDelete().setOnAction(e -> {
+    Product selected = view.getTable().getSelectionModel().getSelectedItem();
+    if (selected != null) {
+        try {
+            service.deleteProduct(selected.getCode());
+            loadData(); // Reload TableView
+        } catch (Exception ex) {
+            showAlert("Error", "Gagal menghapus: " + ex.getMessage());
+        }
+    } else {
+        showAlert("Warning", "Pilih produk yang akan dihapus.");
+    }
+});
 ```
-)
+
 ---
 
 ## Hasil Eksekusi
-(Sertakan screenshot hasil eksekusi program.  
-![Screenshot hasil](screenshots/hasil.png)
-)
+  
+![Screenshot hasil](screenshots/Hasil.png.png)
+
 ---
 
 ## Analisis
-(
-- Jelaskan bagaimana kode berjalan.  
-- Apa perbedaan pendekatan minggu ini dibanding minggu sebelumnya.  
-- Kendala yang dihadapi dan cara mengatasinya.  
-)
+- **TableView**: Penggunaan `TableView` memudahkan menampilkan data tabular yang kompleks dibandingkan `ListView`. Binding data dilakukan menggunakan `PropertyValueFactory` yang mencocokkan nama field di class `Product`.
+- **Lambda Expression**: Kode event handling menjadi lebih ringkas dan mudah dibaca dibandingkan menggunakan anonymous inner class.
+- **Integrasi Database**: Data yang tampil di tabel bersifat dinamis dan real-time dari database PostgreSQL. Setiap penambahan atau penghapusan langsung merefleksikan perubahan di database.
 ---
 
-## Kesimpulan
-(Tuliskan kesimpulan dari praktikum minggu ini.  
-Contoh: *Dengan menggunakan class dan object, program menjadi lebih terstruktur dan mudah dikembangkan.*)
+## Traceability Bab 6 (UML) -> GUI
 
----
-
-## Quiz
-(1. [Tuliskan kembali pertanyaan 1 dari panduan]  
-   **Jawaban:** …  
-
-2. [Tuliskan kembali pertanyaan 2 dari panduan]  
-   **Jawaban:** …  
-
-3. [Tuliskan kembali pertanyaan 3 dari panduan]  
-   **Jawaban:** …  )
+| Artefak Bab 6 | Referensi | Handler GUI | Controller/Service | DAO | Dampak UI/DB |
+|---|---|---|---|---|---|
+| Use Case | UC-02 Lihat Daftar Produk | `loadData()` / init view | `ProductController.load()` → `ProductService.findAll()` | `ProductDAO.findAll()` | TableView terisi dari DB |
+| Use Case | UC-03 Hapus Produk | Tombol Hapus | `ProductController.delete()` → `ProductService.delete(code)` | `ProductDAO.delete(code)` | DB delete + TableView reload |
+| Sequence | SD-02 Hapus Produk | Tombol Hapus | View→Controller→Service | DAO→DB | urutan panggilan sesuai SD 

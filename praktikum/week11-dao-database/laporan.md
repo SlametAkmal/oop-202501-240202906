@@ -1,73 +1,88 @@
-# Laporan Praktikum Minggu 1 (sesuaikan minggu ke berapa?)
-Topik: [Tuliskan judul topik, misalnya "Class dan Object"]
+# Laporan Praktikum Minggu 11 
+Topik: Data Access Object (DAO) dan CRUD Database dengan JDBC
 
 ## Identitas
-- Nama  : [Nama Mahasiswa]
-- NIM   : [NIM Mahasiswa]
-- Kelas : [Kelas]
+- Nama  : [Slamet Akmal]
+- NIM   : [240202906]
+- Kelas : [3IKRB]
 
 ---
 
 ## Tujuan
-(Tuliskan tujuan praktikum minggu ini.  
-Contoh: *Mahasiswa memahami konsep class dan object serta dapat membuat class Produk dengan enkapsulasi.*)
+1. Menjelaskan konsep Data Access Object (DAO) dalam pengembangan aplikasi OOP.
+2. Menghubungkan aplikasi Java dengan basis data menggunakan JDBC.
+3. Mengimplementasikan operasi CRUD (Create, Read, Update, Delete) secara lengkap.
+4. Mengintegrasikan DAO dengan class aplikasi OOP sesuai prinsip desain yang baik.
+
 
 ---
 
 ## Dasar Teori
-(Tuliskan ringkasan teori singkat (3–5 poin) yang mendasari praktikum.  
-Contoh:  
-1. Class adalah blueprint dari objek.  
-2. Object adalah instansiasi dari class.  
-3. Enkapsulasi digunakan untuk menyembunyikan data.)
+1. **Data Access Object (DAO)**: Pola desain yang memisahkan logika akses data dari logika bisnis aplikasi. Ini membuat kode lebih terstruktur dan memudahkan penggantian teknologi database tanpa mengubah logika utama.
+2. **JDBC (Java Database Connectivity)**: Standar API Java untuk menghubungkan aplikasi dengan basis data relasional. Komponen utamanya meliputi `DriverManager` (mengelola driver), `Connection` (sesi koneksi), `PreparedStatement` (eksekusi query aman), dan `ResultSet` (menampung hasil query).
+3. **PreparedStatement**: Interface JDBC yang digunakan untuk mengeksekusi statement SQL yang telah dikompilasi sebelumnya. Ini lebih efisien dan aman dari serangan SQL Injection dibandingkan `Statement` biasa.
 
 ---
 
 ## Langkah Praktikum
-(Tuliskan Langkah-langkah dalam prakrikum, contoh:
-1. Langkah-langkah yang dilakukan (setup, coding, run).  
-2. File/kode yang dibuat.  
-3. Commit message yang digunakan.)
+1. **Persiapan Database**: Membuat database `agripos` dan tabel `products` di PostgreSQL.
+2. **Membuat Model**: Membuat class `Product.java` sebagai representasi objek data.
+3. **Membuat Interface DAO**: Mendefinisikan kontrak operasi CRUD di `ProductDAO.java`.
+4. **Implementasi DAO**: Mengimplementasikan logika database JDBC di `ProductDAOImpl.java` menggunakan `PreparedStatement`.
+5. **Integrasi & Pengujian**: Membuat class `MainDAOTest.java` untuk menjalankan skenario CRUD (Insert -> Update -> Read -> Delete) dan memverifikasi hasilnya.
+6. Melakukan commit dengan pesan:
+
+   `week11-dao-database: week11-dao-database: fitur implementasi DAO dan CRUD database`
 
 ---
 
 ## Kode Program
-(Tuliskan kode utama yang dibuat, contoh:  
 
+**1. ProductDAOImpl.java (Implementasi CRUD)**
 ```java
-// Contoh
-Produk p1 = new Produk("BNH-001", "Benih Padi", 25000, 100);
-System.out.println(p1.getNama());
+@Override
+public void insert(Product p) {
+    String sql = "INSERT INTO products (code, name, price, stock) VALUES (?, ?, ?, ?)";
+    try (PreparedStatement stmt = connection.prepareStatement(sql)) {
+        stmt.setString(1, p.getCode());
+        stmt.setString(2, p.getName());
+        stmt.setDouble(3, p.getPrice());
+        stmt.setInt(4, p.getStock());
+        stmt.executeUpdate();
+    } catch (SQLException e) {
+        e.printStackTrace();
+    }
+}
 ```
-)
 ---
 
 ## Hasil Eksekusi
-(Sertakan screenshot hasil eksekusi program.  
-![Screenshot hasil](screenshots/hasil.png)
-)
+ 
+![Screenshot hasil](screenshots/Hasil.png.png)
+
 ---
 
 ## Analisis
-(
-- Jelaskan bagaimana kode berjalan.  
-- Apa perbedaan pendekatan minggu ini dibanding minggu sebelumnya.  
-- Kendala yang dihadapi dan cara mengatasinya.  
-)
+Pada praktikum ini, implementasi pola desain **Data Access Object (DAO)** dilakukan untuk memisahkan logika bisnis dari logika akses data.
+1.  **Alur Program**:
+    - Program dimulai dengan membuat koneksi ke database PostgreSQL menggunakan `DriverManager`.
+    - Objek `ProductDAOImpl` diinstansiasi dengan koneksi tersebut.
+    - `MainDAOTest` melakukan operasi CRUD: menambah produk (`insert`), memperbarui data (`update`), mengambil data (`findByCode` dan `findAll`), dan menghapus data (`delete`).
+    - Setiap operasi database dibungkus dalam blok `try-catch` untuk menangani `SQLException`.
+
+2.  **Perbedaan dengan Minggu Sebelumnya**:
+    - Minggu sebelumnya penyimpanan data bersifat *volatile* (hilang saat program berhenti) karena hanya menggunakan `ArrayList` di memori.
+    - Minggu ini data bersifat *persistent* (tetap ada meski program berhenti) karena disimpan di database PostgreSQL.
+    - Penggunaan JDBC memperkenalkan penanganan *checked exception* (`SQLException`) yang lebih intensif.
+
+3.  **Kendala dan Solusi**:
+    - **Kendala**: Kesalahan *Duplicate Key* saat menjalankan program berulang kali karena data dengan Primary Key yang sama sudah ada.
+    - **Solusi**: Menambahkan perintah `dao.delete("P01")` di awal program untuk membersihkan data lama sebelum insert baru.
 ---
 
 ## Kesimpulan
-(Tuliskan kesimpulan dari praktikum minggu ini.  
-Contoh: *Dengan menggunakan class dan object, program menjadi lebih terstruktur dan mudah dikembangkan.*)
+Penerapan DAO dengan JDBC memberikan struktur yang jelas dalam aplikasi Java yang berinteraksi dengan database. Pola ini meningkatkan **modularitas** (pemisahan tanggung jawab), **keamanan** (lewat `PreparedStatement`), dan **kemudahan pemeliharaan**. Data kini dapat disimpan secara permanen, menjadikan aplikasi lebih realistis dibandingkan sekadar menggunakan variabel memori.
+
 
 ---
 
-## Quiz
-(1. [Tuliskan kembali pertanyaan 1 dari panduan]  
-   **Jawaban:** …  
-
-2. [Tuliskan kembali pertanyaan 2 dari panduan]  
-   **Jawaban:** …  
-
-3. [Tuliskan kembali pertanyaan 3 dari panduan]  
-   **Jawaban:** …  )

@@ -68,9 +68,9 @@ public void testProductCode() {
 ---
 
 ## Hasil Eksekusi
-(Sertakan screenshot hasil eksekusi program.  
-![Screenshot hasil](screenshots/hasil.png)
-)
+ 
+![Screenshot hasil](screenshots/AppMVC.png.png)
+
 ---
 
 ## Analisis
